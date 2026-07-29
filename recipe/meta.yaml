@@ -24,26 +24,28 @@ requirements:
     - wheel
     - setuptools_scm >=8
   run:
-    - python {{ python_min }}
+    - python >={{ python_min }}
     - typing-extensions >=4.10.0
-    - uvicorn >=0.16.0
-    - starlette
-    - websockets >=10.0
-    - python-multipart
-    - htmltools >=0.6.0
+    - uvicorn >=0.23.0
+    - starlette >=0.17.1
+    - websockets >=13.0
+    - python-multipart >=0.0.7
+    - htmltools >=0.7.0
     - click >=8.1.4
     - markdown-it-py >=1.1.0
     - mdit-py-plugins >=0.3.0
     - linkify-it-py >=1.0
-    - appdirs >=1.4.4
+    - platformdirs >=2.1.0
     - asgiref >=3.5.2
     - packaging >=20.9
     - watchfiles >=0.18.0
     - questionary >=2.0.0
-    - prompt-toolkit
+    - prompt-toolkit >=3.0.0
     - setuptools
     - narwhals >=1.10.0
     - orjson >=3.10.7
+    - shinychat >=0.1.0
+    - opentelemetry-api >=1.24.0
     ## DONOT REMOVE THESE LINES
     # grayskull utility generated some
     # of the dependencies, but they are
@@ -69,6 +71,7 @@ about:
   license: BSD-3-Clause AND MIT
   license_file:
     - LICENSE
+    - shiny/www/shared/busy-indicators/spinners/LICENSE
     - shiny/www/shared/highlight/LICENSE
     - shiny/www/shared/jqueryui/LICENSE.txt
   description: |
