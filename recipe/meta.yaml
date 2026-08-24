@@ -14,7 +14,7 @@ build:
   noarch: python
   entry_points:
     - shiny = shiny._main:main
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -56,11 +56,10 @@ test:
   imports:
     - shiny
   commands:
-    # Commenting out pip check as it compains about
-    # not finding contextvars (which is only necessary
-    # for python<3.7)
-    # - pip check
+    - pip check
     - shiny --help
+    # Assert version isn't 0.0.0
+    - python -c "from importlib.metadata import version; assert version('shiny') == '{{ version }}'"
   requires:
     - pip
     - python {{ python_min }}
